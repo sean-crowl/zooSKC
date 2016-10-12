@@ -12,15 +12,12 @@ class Zoo {
     private var done: Bool = false
     private var currentInput: String = ""
     private var io = Io()
-    private var peeps = People()
-    private var anim = Animal()
     var animName: String = ""
     var size: String = ""
     var color: String = ""
-    var legs: String = ""
     var food: String = ""
     
-    var animalList = [String]()
+    var animalList = [Animal]()
     
     
     func addAnimal() {
@@ -33,35 +30,17 @@ class Zoo {
         io.writeMessage("\nWhat is the color of the animal?")
         currentInput = io.getInput()
         color = currentInput
-        io.writeMessage("\nHow many legs does the animal have?")
-        currentInput = io.getInput()
-        legs = currentInput
         io.writeMessage("\nWhat kind of food does the animal eat? (Example: Meat, Plants, etc.)")
         currentInput = io.getInput()
         food = currentInput
-        printAnimal()
+        
+        print("Thank you! Your animal has been added!")
+        var newAnimal = Animal(animalName: animName, animalSize: size, animalColor: color, animalFood: food)
+        animalList.append(newAnimal)
+        
+        addMoreAnim()
     }
     
-    func printAnimal() {
-        io.writeMessage("\nWould you like to view or save your entry? Type 'View' to view it, 'Save' to save it, or type 'Restart' to start over.")
-        currentInput = io.getInput()
-        if currentInput == "View" {
-            print("\nYou have added the \(animName). It is of \(size) size and is \(color) in color. It has \(legs) legs and eats \(food)")
-            printAnimal()
-        } else if currentInput == "Save" {
-            animalList.append(animName)
-            animalList.append("   -Size: \(size)")
-            animalList.append("   -Color: \(color)")
-            animalList.append("   -# of Legs: \(legs)")
-            animalList.append("   -Food: \(food) \n\n")
-        
-        } else if currentInput == "Restart" {
-            addAnimal()
-        } else {
-            print("\nYou must make a valid selection!\n")
-            printAnimal()
-        }
-    }
     
     func addMoreAnim() {
         io.writeMessage("\nWould you like to add another animal? Type 'Yes' or type 'Return' to return to the menu!")
@@ -76,4 +55,9 @@ class Zoo {
         }
     }
 
+    func printAnimal() {
+        for name in animalList {
+            print(animName)
+        }
+    }
 }

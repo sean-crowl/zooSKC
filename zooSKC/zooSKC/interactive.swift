@@ -10,8 +10,6 @@ class Interactive {
     private var done: Bool = false
     private var currentInput: String = ""
     private var io = Io()
-    private var peeps = People()
-    private var anim = Animal()
     private var zoo = Zoo()
     
     func go() {
@@ -33,7 +31,7 @@ class Interactive {
                     if currentInput == "Add" {
                         io.writeMessage("\nWould you like to add an 'Animal' or a 'Person'?")
                         currentInput = io.getInput()
-                        var addChoice = currentInput
+                        let addChoice = currentInput
                         switch addChoice {
                             case "Animal":
                             zoo.addAnimal()
@@ -47,9 +45,7 @@ class Interactive {
                         io.writeMessage("\nWould you like to view 'Animals' or 'People'?")
                         currentInput = io.getInput()
                         if currentInput == "Animals" {
-                            let animalsSort = zoo.animalList
-                                .joined(separator: "\n")
-                            print(animalsSort)
+                            zoo.printAnimal()
                         }
                         
                 }
