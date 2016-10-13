@@ -9,9 +9,9 @@
 import Foundation
 
 class Zoo {
-    private var done: Bool = false
-    private var currentInput: String = ""
-    private var io = Io()
+    var done: Bool = false
+    var currentInput: String = ""
+    var io = Io()
     var animName: String = ""
     var size: String = ""
     var color: String = ""
@@ -30,6 +30,12 @@ class Zoo {
     var aquaticAnimalList = [Aquatic]()
     var employeeList = [Employee]()
     var visitorList = [Visitor]()
+    
+    enum HabitatType {
+        case Pit
+        case Aviary
+        case Aquarium
+    }
     
     
     func addLandAnimal() {
@@ -143,8 +149,8 @@ class Zoo {
 
     func printLandAnimals() {
         for i in landAnimalList {
-            print(i.animName)
-        }
+                print(i.animName)
+            }
     }
     
     func printAvianAnimals() {
@@ -170,4 +176,7 @@ class Zoo {
             print(i.persName)
         }
     }
+    
+    
 }
+

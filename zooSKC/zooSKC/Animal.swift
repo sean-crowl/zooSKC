@@ -9,8 +9,8 @@
 import Foundation
 
 class Animal {
-    private var currentInput: String = ""
-    private var io = Io()
+    var currentInput: String = ""
+    var io = Io()
     var animName: String
     var size: String
     var color: String

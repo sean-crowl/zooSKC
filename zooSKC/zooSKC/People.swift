@@ -9,8 +9,8 @@
 import Foundation
 
 class People {
-    private var currentInput: String = ""
-    private var io = Io()
+    var currentInput: String = ""
+    var io = Io()
     var persName: String
     var gender: String
     var age: String
