@@ -17,7 +17,7 @@ class Zoo {
     var color: String = ""
     var food: String = ""
     
-    var animalList = [Animal]()
+    var animalList = [Animal(animalName: "Shark", animalSize: "Large", animalColor: "Blue", animalFood: "Fish")]
     
     
     func addAnimal() {
@@ -38,7 +38,6 @@ class Zoo {
         var newAnimal = Animal(animalName: animName, animalSize: size, animalColor: color, animalFood: food)
         animalList.append(newAnimal)
         
-        addMoreAnim()
     }
     
     
@@ -55,9 +54,9 @@ class Zoo {
         }
     }
 
-    func printAnimal() {
-        for name in animalList {
-            print(animName)
+    func printAnimals() {
+        for i in animalList {
+            print(i.animName)
         }
     }
 }
