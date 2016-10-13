@@ -23,3 +23,33 @@ class Animal {
         food = animalFood
     }
 }
+
+class Land: Animal {
+    var legs: String
+    
+    init(animName: String, size: String, color: String, food: String, numberOfLegs: String) {
+        legs = numberOfLegs
+        
+        super.init(animalName: animName, animalSize: size, animalColor: color, animalFood: food)
+    }
+}
+
+class Avian: Animal {
+    var fly: String
+    
+    init(animName: String, size: String, color: String, food: String, doesItFly: String) {
+        fly = doesItFly
+        
+        super.init(animalName: animName, animalSize: size, animalColor: color, animalFood: food)
+    }
+}
+
+class Aquatic: Animal {
+    var water: String
+    
+    init(animName: String, size: String, color: String, food: String, typeOfWater: String) {
+        water = typeOfWater
+        
+        super.init(animalName: animName, animalSize: size, animalColor: color, animalFood: food)
+    }
+}

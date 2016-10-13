@@ -21,22 +21,51 @@ class Interactive {
             let selection = currentInput
             switch selection {
                 case "Help":
-                print("\nHere is a list of available actions for the management system:\nAdd: You may add an entry for an animal, visitor, or employee.\nView: View the current available animals, employees, or visitors.\nQuit: Quit the program.\n")
+                print("\nHere is a list of available actions for the management system:\nAddAnimal: You may add an entry for an animal.\nAddPerson: You may add an entry for an employee or visitor.\nViewAnimals: View the current available animals.\nViewPeople: View the current available employees and visitors.\nDetails: View details on a specific animal, employee, or visitor.\nQuit: Quit the program.\n")
                 case "Quit":
                     print("\nThank you for using Zoo Management Mach 5!")
                     done = true
-                case "Add":
-                    io.writeMessage("\nWould you like to add an 'Animal' or a 'Person'?")
+                case "AddAnimal":
+                    io.writeMessage("\nWould you like to add a 'Land' animal, an 'Avian' animal, or an 'Aquatic' animal?")
                     currentInput = io.getInput()
-                    let addChoice = currentInput
-                        switch addChoice {
-                            case "Animal":
-                            zoo.addAnimal()
-                            case "Person":
-                            print("Doesn't do anything yet")
-                        default:
-                            print("\nNot a valid selection!")
+                        let animalPick = currentInput
+                    switch animalPick {
+                    case "Land":
+                        zoo.addLandAnimal()
+                    case "Avian":
+                        zoo.addAvianAnimal()
+                    case "Aquatic":
+                        zoo.addAquaticAnimal()
+                    default:
+                        print("You must make a valid selection!")
                         }
+                case "AddPerson":
+                    io.writeMessage("\nWould you like to add a 'Visitor' or an 'Employee'?")
+                    currentInput = io.getInput()
+                        let personPick = currentInput
+                    switch personPick {
+                    case "Visitor":
+                        zoo.addVisitor()
+                    case "Employee":
+                        zoo.addEmployee()
+                    default:
+                        print("You must make a valid selection!")
+                }
+                case "ViewAnimals":
+                    io.writeMessage("\nWould you like to view the 'Land' animals,'Avian' animals, or 'Aquatic' animals?")
+                    currentInput = io.getInput()
+                        let animalView = currentInput
+                    switch animalView {
+                    case "Land":
+                        zoo.printLandAnimals()
+                    case "Avian":
+                        zoo.printAvianAnimals()
+                    case "Aquatic":
+                        zoo.printAquaticAnimals()
+                    default:
+                        print("You must make a valid selection!")
+                }
+                
                 default:
                 print("\nNot a valid selection!")
                         }
