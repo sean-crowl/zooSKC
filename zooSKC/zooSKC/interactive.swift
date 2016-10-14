@@ -83,11 +83,27 @@ class Interactive {
                     let animalDetail = currentInput
                     switch animalDetail {
                     case "Land":
-                        print("Not yet")
+                        zoo.printLandAnimalDetails()
+                    case "Avian":
+                        zoo.printAvianAnimalDetails()
+                    case "Aquatic":
+                        zoo.printAquaticAnimalDetails()
                     default:
                         print("You must make a valid selection!")
                 }
-                
+                case "DetailPeople":
+                    io.writeMessage("\nWould you like details on 'Employees' or 'Visitors'?'")
+                    currentInput = io.getInput()
+                    let peopleDetail = currentInput
+                    switch peopleDetail {
+                    case "Employees":
+                        zoo.printEmployeeDetails()
+                    case "Visitors":
+                        zoo.printVisitorDetails()
+                    default:
+                        print("You must make a valid selection!")
+            }
+            
                 default:
                 print("\nNot a valid selection!")
                         }

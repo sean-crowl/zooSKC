@@ -24,6 +24,9 @@ class Zoo {
     var age: String = ""
     var job: String = ""
     var attraction: String = ""
+    var landHabitat: String = ""
+    var avianHabitat: String = ""
+    var aquaticHabitat: String = ""
     
     var landAnimalList = [Land]()
     var avianAnimalList = [Avian]()
@@ -55,7 +58,7 @@ class Zoo {
         currentInput = io.getInput()
         legs = currentInput
         
-        print("\nThank you! Your animal has been added!\n")
+        print("\nYou have added the \(animName)! It is of \(size) size and \(color) in color. It eats \(food) and has \(legs) legs.\n\nThank you! Your animal has been added!\n")
         let newLand = Land(animName: animName, size: size, color: color, food: food, numberOfLegs: legs)
         landAnimalList.append(newLand)
         
@@ -78,7 +81,7 @@ class Zoo {
         currentInput = io.getInput()
         fly = currentInput
         
-        print("\nThank you! Your animal has been added!\n")
+        print("\nYou have added the \(animName)! It is of \(size) size and \(color) in color. It eats \(food). Can it fly? \(fly).\n\nThank you! Your animal has been added!\n")
         let newAvian = Avian(animName: animName, size: size, color: color, food: food, doesItFly: fly)
         avianAnimalList.append(newAvian)
         
@@ -97,11 +100,11 @@ class Zoo {
         io.writeMessage("\nWhat kind of food does the animal eat? (Example: Meat, Plants, etc.)")
         currentInput = io.getInput()
         food = currentInput
-        io.writeMessage("\nDoes it live in fresh water or salt water?")
+        io.writeMessage("\nDoes it live in 'Fresh' water or 'Salt' water?")
         currentInput = io.getInput()
         legs = currentInput
         
-        print("\nThank you! Your animal has been added!\n")
+        print("\nYou have added the \(animName)! It is of \(size) size and \(color) in color. It eats \(food) and lives in \(water) water.\n\nThank you! Your animal has been added!\n")
         let newAquatic = Aquatic(animName: animName, size: size, color: color, food: food, typeOfWater: water)
         aquaticAnimalList.append(newAquatic)
         
@@ -121,7 +124,7 @@ class Zoo {
         currentInput = io.getInput()
         job = currentInput
         
-        print("\nThank you! Your animal has been added!\n")
+        print("\nYou have added the employee \(persName)! They are \(age) in age and \(gender) in gender. Their job is \(job).\n\nThank you! Your animal has been added!\n")
         let newEmployee = Employee(persName: persName, gender: gender, age: age, jobTitle: job)
         employeeList.append(newEmployee)
     }
@@ -140,7 +143,7 @@ class Zoo {
         currentInput = io.getInput()
         attraction = currentInput
         
-        print("\nThank you! Your animal has been added!\n")
+        print("\nYou have added the visitor \(persName)! They are \(age) in age and \(gender) in gender. Their favorite attraction is \(attraction).\n\nThank you! Your animal has been added!\n")
         let newVisitor = Visitor(persName: persName, gender: gender, age: age, favoriteAttraction: attraction)
         visitorList.append(newVisitor)
     }
@@ -177,6 +180,58 @@ class Zoo {
         }
     }
     
+    func printLandAnimalDetails() {
+        for i in landAnimalList {
+            print(i.animName)
+            print("   -Size: \(size)")
+            print("   -Color: \(color)")
+            print("   -Food: \(food)")
+            print("   -Number of Legs: \(legs)")
+            print("   -Habitat: \(HabitatType.Pit)\n\n")
+        }
+    }
+    
+    func printAvianAnimalDetails() {
+        for i in avianAnimalList {
+            print(i.animName)
+            print("   -Size: \(size)")
+            print("   -Color: \(color)")
+            print("   -Food: \(food)")
+            print("   -Does it Fly: \(fly)")
+            print("   -Habitat: \(HabitatType.Aviary)\n\n")
+        }
+    }
+    
+    func printAquaticAnimalDetails() {
+        for i in aquaticAnimalList {
+            print(i.animName)
+            print("   -Size: \(size)")
+            print("   -Color: \(color)")
+            print("   -Food: \(food)")
+            print("   -Type of Water: \(water)")
+            print("   -Habitat: \(HabitatType.Aquarium)\n\n")
+        }
+    }
+    
+    func printEmployeeDetails() {
+        for i in employeeList {
+            print(i.persName)
+            print("   -Age: \(age)")
+            print("   -Gender: \(gender)")
+            print("   -Job: \(job)\n\n")
+
+        }
+    }
+    
+    func printVisitorDetails() {
+        for i in employeeList {
+            print(i.persName)
+            print("   -Age: \(age)")
+            print("   -Gender: \(gender)")
+            print("   -Favorite Attraction: \(attraction)\n\n")
+            
+        }
+    }
     
 }
 
