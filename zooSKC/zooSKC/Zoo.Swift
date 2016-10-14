@@ -28,11 +28,11 @@ class Zoo {
     var avianHabitat: String = ""
     var aquaticHabitat: String = ""
     
-    var landAnimalList = [Land]()
-    var avianAnimalList = [Avian]()
-    var aquaticAnimalList = [Aquatic]()
-    var employeeList = [Employee]()
-    var visitorList = [Visitor]()
+    var landAnimalList = [Land(animName: "Lion", size: "Medium", color: "Yellow", food: "Meat", numberOfLegs: "4"), Land(animName: "Rhino", size: "Large", color: "Grey", food: "Grass", numberOfLegs: "4")]
+    var avianAnimalList = [Avian(animName: "Ostrich", size: "Large", color: "Black and Tan", food: "Seeds", doesItFly: "No"), Avian(animName: "Cardinal", size: "Small", color: "Red", food: "Bugs", doesItFly: "Yes")]
+    var aquaticAnimalList = [Aquatic(animName: "Shark", size: "Large", color: "Grey", food: "Fish", typeOfWater: "Salt Water"), Aquatic(animName: "Stingray", size: "Medium", color: "Black", food: "Shrimp", typeOfWater: "Salt Water")]
+    var employeeList = [Employee(persName: "Sean Connery", gender: "Male", age: "86", jobTitle: "Lion Trainer"), Employee(persName: "Elvis Presley", gender: "Male", age: "42", jobTitle: "Zoo Entertainer")]
+    var visitorList = [Visitor(persName: "Hillary Clinton", gender: "Fmale", age: "68", favoriteAttraction: "Emperor Penguins"), Visitor(persName: "Donald Trump", gender: "Male", age: "70", favoriteAttraction: "Giraffes. They're hyuuge.")]
     
     enum HabitatType {
         case Pit
@@ -183,52 +183,52 @@ class Zoo {
     func printLandAnimalDetails() {
         for i in landAnimalList {
             print(i.animName)
-            print("   -Size: \(size)")
-            print("   -Color: \(color)")
-            print("   -Food: \(food)")
-            print("   -Number of Legs: \(legs)")
-            print("   -Habitat: \(HabitatType.Pit)\n\n")
+            print("   -Size: \(i.size)")
+            print("   -Color: \(i.color)")
+            print("   -Food: \(i.food)")
+            print("   -Number of Legs: \(i.legs)")
+            print("   -Habitat: \(HabitatType.Pit)\n")
         }
     }
     
     func printAvianAnimalDetails() {
         for i in avianAnimalList {
             print(i.animName)
-            print("   -Size: \(size)")
-            print("   -Color: \(color)")
-            print("   -Food: \(food)")
-            print("   -Does it Fly: \(fly)")
-            print("   -Habitat: \(HabitatType.Aviary)\n\n")
+            print("   -Size: \(i.size)")
+            print("   -Color: \(i.color)")
+            print("   -Food: \(i.food)")
+            print("   -Does it Fly: \(i.fly)")
+            print("   -Habitat: \(HabitatType.Aviary)\n")
         }
     }
     
     func printAquaticAnimalDetails() {
         for i in aquaticAnimalList {
             print(i.animName)
-            print("   -Size: \(size)")
-            print("   -Color: \(color)")
-            print("   -Food: \(food)")
-            print("   -Type of Water: \(water)")
-            print("   -Habitat: \(HabitatType.Aquarium)\n\n")
+            print("   -Size: \(i.size)")
+            print("   -Color: \(i.color)")
+            print("   -Food: \(i.food)")
+            print("   -Type of Water: \(i.water)")
+            print("   -Habitat: \(HabitatType.Aquarium)\n")
         }
     }
     
     func printEmployeeDetails() {
         for i in employeeList {
             print(i.persName)
-            print("   -Age: \(age)")
-            print("   -Gender: \(gender)")
-            print("   -Job: \(job)\n\n")
+            print("   -Age: \(i.age)")
+            print("   -Gender: \(i.gender)")
+            print("   -Job: \(i.job)\n")
 
         }
     }
     
     func printVisitorDetails() {
-        for i in employeeList {
+        for i in visitorList {
             print(i.persName)
-            print("   -Age: \(age)")
-            print("   -Gender: \(gender)")
-            print("   -Favorite Attraction: \(attraction)\n\n")
+            print("   -Age: \(i.age)")
+            print("   -Gender: \(i.gender)")
+            print("   -Favorite Attraction: \(i.attraction)\n")
             
         }
     }
