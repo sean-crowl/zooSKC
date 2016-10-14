@@ -30,7 +30,7 @@ class Zoo {
     
     var landAnimalList = [Land(animName: "Lion", size: "Medium", color: "Yellow", food: "Meat", numberOfLegs: "4"), Land(animName: "Rhino", size: "Large", color: "Grey", food: "Grass", numberOfLegs: "4")]
     var avianAnimalList = [Avian(animName: "Ostrich", size: "Large", color: "Black and Tan", food: "Seeds", doesItFly: "No"), Avian(animName: "Cardinal", size: "Small", color: "Red", food: "Bugs", doesItFly: "Yes")]
-    var aquaticAnimalList = [Aquatic(animName: "Shark", size: "Large", color: "Grey", food: "Fish", typeOfWater: "Salt Water"), Aquatic(animName: "Stingray", size: "Medium", color: "Black", food: "Shrimp", typeOfWater: "Salt Water")]
+    var aquaticAnimalList = [Aquatic(animName: "Shark", size: "Large", color: "Grey", food: "Fish", typeOfWater: "Salt"), Aquatic(animName: "Stingray", size: "Medium", color: "Black", food: "Shrimp", typeOfWater: "Salt")]
     var employeeList = [Employee(persName: "Sean Connery", gender: "Male", age: "86", jobTitle: "Lion Trainer"), Employee(persName: "Elvis Presley", gender: "Male", age: "42", jobTitle: "Zoo Entertainer")]
     var visitorList = [Visitor(persName: "Hillary Clinton", gender: "Fmale", age: "68", favoriteAttraction: "Emperor Penguins"), Visitor(persName: "Donald Trump", gender: "Male", age: "70", favoriteAttraction: "Giraffes. They're hyuuge.")]
     
@@ -58,7 +58,7 @@ class Zoo {
         currentInput = io.getInput()
         legs = currentInput
         
-        print("\nYou have added the \(animName)! It is of \(size) size and \(color) in color. It eats \(food) and has \(legs) legs.\n\nThank you! Your animal has been added!\n")
+        print("\nYou have added the \(animName)! It is of \(size) size and \(color) in color. It eats \(food) and has \(legs) legs. Its exhibit in the zoo will be a \(HabitatType.Pit).\n\nThank you! Your animal has been added!\n")
         let newLand = Land(animName: animName, size: size, color: color, food: food, numberOfLegs: legs)
         landAnimalList.append(newLand)
         
@@ -81,7 +81,7 @@ class Zoo {
         currentInput = io.getInput()
         fly = currentInput
         
-        print("\nYou have added the \(animName)! It is of \(size) size and \(color) in color. It eats \(food). Can it fly? \(fly).\n\nThank you! Your animal has been added!\n")
+        print("\nYou have added the \(animName)! It is of \(size) size and \(color) in color. It eats \(food). Can it fly? \(fly). Its exhibit in the zoo will be in an \(HabitatType.Aviary).\n\nThank you! Your animal has been added!\n")
         let newAvian = Avian(animName: animName, size: size, color: color, food: food, doesItFly: fly)
         avianAnimalList.append(newAvian)
         
@@ -102,9 +102,9 @@ class Zoo {
         food = currentInput
         io.writeMessage("\nDoes it live in 'Fresh' water or 'Salt' water?")
         currentInput = io.getInput()
-        legs = currentInput
+        water = currentInput
         
-        print("\nYou have added the \(animName)! It is of \(size) size and \(color) in color. It eats \(food) and lives in \(water) water.\n\nThank you! Your animal has been added!\n")
+        print("\nYou have added the \(animName)! It is of \(size) size and \(color) in color. It eats \(food) and lives in \(water) water. Its exhibit in the zoo will be in an \(HabitatType.Aquarium).\n\nThank you! Your animal has been added!\n")
         let newAquatic = Aquatic(animName: animName, size: size, color: color, food: food, typeOfWater: water)
         aquaticAnimalList.append(newAquatic)
         

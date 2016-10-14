@@ -21,7 +21,7 @@ class Interactive {
             let selection = currentInput
             switch selection {
                 case "Help":
-                print("\nHere is a list of available actions for the management system:\nAddAnimal: You may add an entry for an animal.\nAddPerson: You may add an entry for an employee or visitor.\nViewAnimals: View the current available animals.\nViewPeople: View the current available employees and visitors.\nDetailAnimals: View details on a specific animals.\nDetailPeople: View details on employees or visitors.\nQuit: Quit the program.\n")
+                print("\nHere is a list of available actions for the management system:\nAddAnimal: You may add an entry for an animal.\nAddPerson: You may add an entry for an employee or visitor.\nViewAnimals: View the current available animals.\nViewPeople: View the current available employees and visitors.\nDetailAnimals: View details on specific animals.\nDetailPeople: View details on employees or visitors.\nQuit: Quit the program.\n")
                 case "Quit":
                     print("\nThank you for using Zoo Management Mach 5!")
                     done = true
